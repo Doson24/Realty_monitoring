@@ -24,7 +24,8 @@ def init_webdriver():
 
 def write_file(data):
     """
-    Формат записываемой строки: кол-во в Железногосрке, кол-во в Красноярске, Дата
+    Формат записываемой строки: кол-во квартир на продажу в Железногосрке, кол-во в аренду Железногосрке,
+     кол-во квартир на продажу  в Красноярске, кол-во в аренду в Красноярске, Дата
     """
     a_file = open("Count_realty.csv", "a", newline='')
     writer = csv.writer(a_file, dialect='excel')
@@ -59,8 +60,11 @@ def main(urls, cities):
     # print(city_realty_count)
 
 if __name__ == '__main__':
-    urls = ['https://www.avito.ru/krasnoyarskiy_kray_zheleznogorsk/kvartiry/prodam-ASgBAgICAUSSA8YQ',
-            'https://www.avito.ru/krasnoyarsk/kvartiry/prodam-ASgBAgICAUSSA8YQ']
+    urls = ['https://www.avito.ru/krasnoyarskiy_kray_zheleznogorsk/kvartiry/prodam',
+            'https://www.avito.ru/krasnoyarskiy_kray_zheleznogorsk/kvartiry/sdam/na_dlitelnyy_srok?cd=1',
+            'https://www.avito.ru/krasnoyarsk/kvartiry/prodam',
+            'https://www.avito.ru/krasnoyarsk/kvartiry/sdam/na_dlitelnyy_srok?cd=1&rn=25934'
+            ]
     cities = ['Железногосрк', "Красноярск"]
 
     while True:
