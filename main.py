@@ -56,7 +56,6 @@ def main(urls, cities):
     driver.close()
 
     write_file(count_list)
-
     # print(city_realty_count)
 
 if __name__ == '__main__':
