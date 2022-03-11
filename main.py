@@ -50,8 +50,10 @@ def domclick(url, driver):
 def main(urls, cities):
     driver = init_webdriver()
     date = datetime.date.today().strftime('%Y-%m-%d')
+    time = datetime.datetime.now().time().strftime('%H:%M:%S')
     count_list = [avito(url, driver) for url in urls]
     count_list.append(date)
+    count_list.append(time)
     # domclick('https://krasnoyarsk.domclick.ru/pokupka', driver)
 
     driver.close()
